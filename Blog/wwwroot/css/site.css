@@ -1,0 +1,140 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    font-family: "ZonaPro Regular";
+}
+
+
+.navbar {
+    padding: 8px 20px;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.navbar-brand {
+    margin-right: 10px;
+    color: white !important;
+    font-weight: 700;
+    font-size: 22px;
+    font-family: "ZonaPro Bold";
+}
+
+.nav-link {
+    color: white !important;
+    font-weight: 500;
+    font-size: 18px;
+    font-family: "ZonaPro SemiBold";
+}
+
+.nav-item {
+    margin: 0px 10px;
+}
+
+
+.mybtn {
+    background: none !important;
+    border: none;
+    cursor: pointer;
+}
+
+
+h2 {
+    color: #7d7eb1;
+    font-family: "ZonaPro SemiBold";
+}
+
+
+.link-redirect {
+    text-decoration: none;
+    color: #7d7eb1;
+    font-family: "ZonaPro SemiBold";
+}
+
+
+.text-success {
+    color: #9cc0eb !important;
+    font-family: "ZonaPro SemiBold";
+}
+
+
+input[type="text"] {
+    color: #7d7eb1 !important;
+}
+
+
+.btn-primary {
+    padding: 10px 20px;
+    border: none;
+    font-family: "ZonaPro SemiBold";
+    font-size: 18px;
+    border-radius: 10px;
+}
+
+
+.btn-outline-primary {
+    padding: 10px 20px;
+    background-color: transparent;
+    font-family: "ZonaPro Bold";
+    border-radius: 10px;
+}
+
+.btn-outline-primary:active, .active {
+    border: none;
+    color: white !important;
+}
+
+
+.btn-danger {
+    padding: 10px 20px;
+    border: none;
+    font-family: "ZonaPro SemiBold";
+    font-size: 18px;
+    border-radius: 10px;
+}
+
+
+.light-bg {
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+
+.table {
+    color: inherit;
+}
+
+
+@font-face {
+    font-family: "ZonaPro Regular";
+    src: url("fonts/ZonaPro-Regular.ttf");
+}
+
+@font-face {
+    font-family: "ZonaPro SemiBold";
+    src: url("fonts/ZonaPro-SemiBold.ttf");
+}
+
+@font-face {
+    font-family: "ZonaPro Bold";
+    src: url("fonts/ZonaPro-Bold.ttf");
+}
+
+@font-face {
+    font-family: "ZonaPro Black";
+    src: url("fonts/ZonaPro-Black.ttf");
+}

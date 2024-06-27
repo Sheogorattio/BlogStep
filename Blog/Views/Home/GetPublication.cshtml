@@ -1,0 +1,102 @@
+﻿@model GetPublicationViewModel
+
+
+@{
+    ViewBag.Title = Model.Publication.Title;
+    ViewBag.Description = Model.Publication.SeoDescription;
+    ViewBag.Keywords = Model.Publication.Keywords;
+}
+
+
+<div class="p-4 p-md-5 mb-4 light-bg">
+    <div class="col-md-12 px-0">
+        <h1 class="display-4">@Model.Publication.Title</h1>
+    </div>
+    <div class="small mb-1">
+        <a class="link-redirect" href="@(Model.ReturnUrl ??= Url.Action(action: "Index", controller: "Home",
+                    values: null, protocol: "https"))">« Вернутся назад</a>
+    </div>
+</div>
+
+
+<div class="row g-5">
+    <div class="col-md-8">
+        <p class="fst-italic">
+            <a class="link-redirect" href="@Url.Action(action: "Index", controller: "Home", values: null, protocol: "https")">Главная</a>
+            « @Model.Publication.Title
+        </p>
+        <p class="pb-4 mb-4 fst-italic border-bottom">
+            Категории:
+            @foreach (Category category in Model.Publication.Categories)
+            {
+                <a class="link-redirect" href="@Url.Action(action: "Index", controller: "Home", values: new { categoryId = category.Id }, protocol: "https")">@category.Name</a>
+            }
+        </p>
+        <img src="@Model.Publication.Image" class="img-fluid" alt="Responsive image">
+        <article class="blog-post">
+            @Html.Raw(Model.Publication.Description)
+        </article>
+
+        @await Component.InvokeAsync("RelatedPublications", new { id = Model.Publication.Id.ToString()})
+    </div>
+
+
+    <div class="col-md-4">
+        <div class="position-sticky" style="top: 2rem;">
+            
+            <div class="p-2">
+                @await Component.InvokeAsync("Subscriber")
+            </div>
+            
+            <div class="p-4 mb-3 light-bg">
+                <p class="mb-0">Дата публикации: <b>@Model.Publication.CreatedAt.ToShortDateString()</b></p>
+                <p class="mb-0">
+                    Всего просмотров:
+                    <b>@Model.Publication.TotalViews</b>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
+                        <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
+                        <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
+                    </svg>
+                </p>
+                <p class="mb-0">
+                    <br />
+                    Авторское право – это юридический термин, используемый для описания прав, которыми
+                    обладают авторы на свои литературные и художественные произведения.
+                </p>
+            </div>
+
+
+            <div class="p-4">
+                <h4>Архивы</h4>
+                <ol class="list-unstyled mb-0">
+                    <li><a class="link-redirect" href="#">Март 2024</a></li>
+                    <li><a class="link-redirect" href="#">Февраль 2024</a></li>
+                    <li><a class ="link-redirect" href="#">Январь 2024</a></li>
+                    <li><a class="link-redirect" href="#">Декабрь 2024</a></li>
+                </ol>
+            </div>
+
+
+            <div class="p-4 mb-3 light-bg">
+                <h4>Рекламный блок</h4>
+                <p class="mb-0">
+                    Этот рекламный слоган создали в 1997 году в ответ на девиз «Think» прямого конкурента Apple — IBM.
+                    По данным Forbes, через год после запуска слогана «Think Different» акции компании выросли втрое,
+                    хотя новых значимых продуктов она не выпускала.
+                </p>
+            </div>
+
+
+            <div class="p-4">
+                <h4>Мои сети</h4>
+                <ol class="list-unstyled">
+                    <li><a class="link-redirect" href="#">GitHub</a></li>
+                    <li><a class="link-redirect" href="#">Twitter</a></li>
+                    <li><a class="link-redirect" href="#">Facebook</a></li>
+                </ol>
+            </div>
+
+
+        </div>
+    </div>
+</div>

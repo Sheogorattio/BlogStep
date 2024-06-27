@@ -1,0 +1,53 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\publicationImages\39ad4a57b5f06d202d034ec18a133b59.jpg" />
+    <Content Remove="wwwroot\publicationImages\7f75e0befab8096ae9443a2d6b7ce71a.jpg" />
+    <Content Remove="wwwroot\publicationImages\8f98653770e0eb5c649db198ddf1865a.jpg" />
+    <Content Remove="wwwroot\publicationImages\9578835cc8ee0e2dc3e7a7cc265ea994.jpg" />
+    <Content Remove="wwwroot\publicationImages\c24e14d22aa875f108ddf27d218a3cf6.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MailKit" Version="4.5.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.4" />
+    <PackageReference Include="MimeKit" Version="4.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\css\fonts\" />
+    <Folder Include="wwwroot\lib\subscribe\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="wwwroot\publicationImages\39ad4a57b5f06d202d034ec18a133b59.jpg" />
+    <Resource Include="wwwroot\publicationImages\7f75e0befab8096ae9443a2d6b7ce71a.jpg" />
+    <Resource Include="wwwroot\publicationImages\8f98653770e0eb5c649db198ddf1865a.jpg" />
+    <Resource Include="wwwroot\publicationImages\9578835cc8ee0e2dc3e7a7cc265ea994.jpg" />
+    <Resource Include="wwwroot\publicationImages\c24e14d22aa875f108ddf27d218a3cf6.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="wwwroot\js\category.js">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>category.cs</LastGenOutput>
+    </Content>
+    <Content Update="wwwroot\js\category.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>category.js</DependentUpon>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+
+</Project>
